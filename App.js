@@ -24,11 +24,14 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+import Icons from 'react-native-vector-icons/MaterialCommunityIcons'
+
 const App: () => React$Node = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
+      <Icons name= "SOCIAL MEDIA" size = {40} color = 'gray'/>
         <ScrollView
           contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>

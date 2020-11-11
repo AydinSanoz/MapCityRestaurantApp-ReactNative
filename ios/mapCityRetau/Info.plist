@@ -54,6 +54,6 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIAppFonts</key>
-	<string>MaterialCommunityIcons.ttf</string>
+	<string>FontAwesome.ttf</string>
 </dict>
 </plist>
