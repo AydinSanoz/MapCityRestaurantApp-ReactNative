@@ -55,5 +55,7 @@
 	<false/>
 	<key>UIAppFonts</key>
 	<string>FontAwesome.ttf</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>To Show Restaurant Location</string>
 </dict>
 </plist>
