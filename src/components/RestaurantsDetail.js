@@ -21,7 +21,8 @@ export const RestaurantDetail = (props) => {
       onBackdropPress = {props.onClose}
       swipeDirection="down"
       onSwipeComplete={props.onClose}
-      style={{justifyContent: 'flex-end'}}>
+      style={{justifyContent: 'flex-end'}}
+    >
       <View style={restaurantDetailStyles.container}>
         <View style={restaurantDetailStyles.line} />
         <View style={restaurantDetailStyles.line} />
