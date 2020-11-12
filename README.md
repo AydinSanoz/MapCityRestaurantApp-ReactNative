@@ -6,7 +6,7 @@
 ||
 |<img src = './ScreenShots/mapCityRestaurant.gif'>|
 
-|- MapView and Marker
+### MapView and Marker Usage
 ```bash
 <MapView
           ref={mapRef}
