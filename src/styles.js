@@ -10,7 +10,7 @@ export const searchBarStyles = StyleSheet.create({
         alignSelf : 'center'
     },
     input:{
-       color : 'white',
+       //null,
     }
 })
 
