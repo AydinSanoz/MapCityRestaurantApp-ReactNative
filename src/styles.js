@@ -4,7 +4,7 @@ export const searchBarStyles = StyleSheet.create({
     container : {
         padding: 10,
         borderRadius:10,
-        backgroundColor : 'gray',
+        backgroundColor : '#d3b8ae',
         width : Dimensions.get('window').width *0.80,
         margin : 10,
         alignSelf : 'center'
@@ -16,39 +16,67 @@ export const searchBarStyles = StyleSheet.create({
 
 export const cityStyles = StyleSheet.create({
     container:{
-        backgroundColor : '#efe1cc',
+        backgroundColor : '#d3b8ae',
         margin: 5,
         padding : 10,
         alignSelf : 'center',
         borderRadius : 10,
-
+        flexDirection :'row',
+    },
+    text:{
+        marginLeft:3,
+        
     }
+    
 })
 
-export const detailStyle = StyleSheet.create({
+export const restaurantDetailStyles = StyleSheet.create({
     container: {
-      backgroundColor: 'white',
+      backgroundColor: '#d3b8ae',
       padding: 10,
       borderTopLeftRadius: 10,
       borderTopRightRadius: 10,
+      
+    },
+    img:{
+        
+        height : Dimensions.get('window').height * 0.20,
+        resizeMode :'cover',
+        margin : 10
     },
     line: {
       borderWidth: 1,
       width: Dimensions.get("window").width / 4,
       alignSelf: 'center',
       borderColor: '#e0e0e0',
-      marginVertical: 2
+      marginVertical: 2,
+     
     },
     name: {
       fontSize: 20,
       fontWeight: 'bold',
       color: '#424242',
+     
     },
-    address: {
-      fontSize: 12,
+    location: {
+      fontSize: 15,
+      marginBottom : 4
+     
     },
     phone: {
       fontWeight: 'bold',
-      marginLeft: 5
+      fontSize : 15
+      
+     
     },
+    price:{
+        fontSize: 15,
+    },
+    desc:{
+        marginTop : 10,
+        textAlign :'justify',
+        
+        
+       
+    }
   });

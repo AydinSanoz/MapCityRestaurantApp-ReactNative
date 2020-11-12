@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useRef} from 'react';
 import {SafeAreaView, View, Text, FlatList} from 'react-native';
-import {RestaurantsDetail, SearchBar, City} from './components';
+import {SearchBar, City, RestaurantDetail} from './components';
 import MapView, {Marker} from 'react-native-maps';
 import Axios from 'axios';
 
@@ -60,9 +60,8 @@ const Main = () => {
       },
     });
   };
-
-  const onRestaurantSelect = (restaurant) => {
-    setSelectedRestaurant(restaurant);
+  const onRestaurantSelect = (r) => {
+    setSelectedRestaurant(r);
     setModalFlag(true);
   };
 
@@ -89,13 +88,18 @@ const Main = () => {
             />
           ))}
         </MapView>
-        <View style={{position: 'absolute'}}>
+        <View style={{position: 'absolute', alignSelf : 'center'}}>
           <SearchBar title="Enter a city" color="white" onText={filterCities} />
           <FlatList
             horizontal
             keyExtractor={(_, index) => index.toString()}
             data={cityList}
             renderItem={renderCities}
+          />
+          <RestaurantDetail
+            isVisible={modalFlag}
+            onClose={() => setModalFlag(false)}
+            selectedRestaurant={selectedRestaurant}
           />
         </View>
       </View>

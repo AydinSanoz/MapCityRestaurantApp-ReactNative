@@ -1,68 +1,64 @@
 import React from 'react';
-import {View, Text, ScrollView} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import Modal from 'react-native-modal';
+import {restaurantDetailStyles} from '../styles';
 // import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {detailStyle} from '../styles';
+export const RestaurantDetail = (props) => {
+  console.log('RestaurantDetail -> props', props);
 
-const RestaurantDetail = (props) => {
-  function showPrice(length) {
-    const priceLabel = [];
-
-    for (let i = 0; i < length; i++) {
-      priceLabel.push(
-        // <Icon key={i} name="currency-usd" size={25} color="#33691e" />,
-        '💲',
-      );
-    }
-
-    return priceLabel;
+  function price(length){
+    let price = []
+      for(i=0;i<length; i++){
+          price.push('⭐')
+      }
+      return price
   }
   return (
+      
     <Modal
       isVisible={props.isVisible}
-      style={{justifyContent: 'flex-end', margin: 0, marginHorizontal: 10}}
-      onBackdropPress={props.onClose}
+      onBackdropPress = {props.onClose}
       swipeDirection="down"
-      onSwipeComplete={props.onClose}>
-      <View style={detailStyle.container}>
-        <View style={detailStyle.line} />
-        <View style={detailStyle.line} />
-        <Text style={detailStyle.name}>{props.restaurant.name}</Text>
-        <Text style={detailStyle.address}>
-          {props.restaurant.area} {props.restaurant.address}
+      onSwipeComplete={props.onClose}
+      style={{justifyContent: 'flex-end'}}>
+      <View style={restaurantDetailStyles.container}>
+        <View style={restaurantDetailStyles.line} />
+        <View style={restaurantDetailStyles.line} />
+        <View style={restaurantDetailStyles.line} />
+
+        <Image
+          source={{uri: props.selectedRestaurant.image_url}}
+          style={restaurantDetailStyles.img}
+        />
+        <Text style={restaurantDetailStyles.name}>
+          {props.selectedRestaurant.name}
         </Text>
-        <View
-          style={{
-            flexDirection: 'row',
-            alignItems: 'center',
-            justifyContent: 'space-between',
-          }}>
-          <View style={{flexDirection: 'row'}}>
-            {/* <Icon name="phone" size={20} /> */}
-            <Text>☎</Text>
-            <Text style={detailStyle.phone}>+{props.restaurant.phone}</Text>
-          </View>
-          <View style={{flexDirection: 'row'}}>
-            {showPrice(props.restaurant.price)}
-          </View>
+        <Text style={restaurantDetailStyles.location}>
+          {props.selectedRestaurant.area} / {props.selectedRestaurant.city}
+        </Text>
+        <View style = {{flexDirection :'row', justifyContent : 'space-between'}}>
+          <Text style = {restaurantDetailStyles.phone}>☎ {props.selectedRestaurant.phone}</Text>
+          <Text style = {restaurantDetailStyles.price}>{price(props.selectedRestaurant.price)}</Text>
         </View>
-        <Text>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer in
-          scelerisque nibh, nec condimentum arcu. Integer tincidunt ullamcorper
-          dapibus. Etiam viverra tellus lectus, non faucibus sem lobortis
-          varius. Etiam ut gravida nunc, in eleifend elit. Morbi laoreet
-          elementum tellus, et mattis dui ultrices a. Aliquam erat volutpat.
-          Donec luctus ac augue non ultricies. Praesent efficitur vitae odio nec
-          euismod. Curabitur eget nibh ultrices, tempus tortor id, volutpat
-          odio. Nullam vel est eget felis fermentum venenatis. Donec sed felis
-          quis leo rutrum viverra vitae quis sapien. Duis tincidunt, ante et
-          bibendum lacinia, libero nisi malesuada dolor, nec venenatis ligula
-          diam quis velit.
-        </Text>
+        <Text style = {restaurantDetailStyles.desc}>Lorem ipsum, or lipsum as it is sometimes known, is dummy text used in laying out print, graphic or web designs. The passage is attributed to an unknown typesetter in the 15th century who is thought to have scrambled parts of Cicero's De Finibus Bonorum et Malorum for use in a type specimen book.</Text>
       </View>
     </Modal>
   );
 };
 
-export {RestaurantDetail};
+selectedRestaurant: address: '3920 Pulaski Highway';
+area: 'Baltimore / Maryland';
+city: 'Abingdon';
+country: 'US';
+id: 91729;
+image_url: 'https://www.opentable.com/img/restimages/91729.jpg';
+lat: 39.460394;
+lng: -76.256016;
+mobile_reserve_url: 'http://mobile.opentable.com/opentable/?restId=91729';
+name: 'Primavera Italian Restaurant & Bar';
+phone: '4106122740';
+postal_code: '21009';
+price: 2;
+reserve_url: 'http://www.opentable.com/single.aspx?rid=91729';
+state: 'MD';
