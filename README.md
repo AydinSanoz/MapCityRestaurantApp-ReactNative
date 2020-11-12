@@ -49,5 +49,6 @@ const filterCities = (text) => {
       onSwipeComplete={props.onClose}
       style={{justifyContent: 'flex-end'}}
     >
+ </Modal>
 
 ```
